@@ -36,51 +36,51 @@ const SignUp = () => {
   };
 
   return (
-    <div className='flex justify-center items-center h-screen'>
-      <div className='max-w-md w-full bg-white dark:bg-black/30 shadow-md rounded px-8 pt-6 pb-8'>
-        <h2 className='text-2xl mb-6 dark:text-white font-semibold'>Sign Up</h2>
+    <div className="flex justify-center items-center h-screen">
+      <div className="max-w-md w-full bg-white dark:bg-black/30 shadow-md rounded px-8 pt-6 pb-8">
+        <h2 className="text-2xl mb-6 dark:text-white font-semibold">Sign Up</h2>
         <form onSubmit={handleSubmit(submitHandler)}>
           <InputField
-            type='email'
-            name='email'
-            label='Email Address'
-            placeholder='example@codewave.com'
+            type="email"
+            name="email"
+            label="Email Address"
+            placeholder="example@codewave.com"
             register={register("email", {
               required: "Email Address is required!",
             })}
             error={errors.email ? errors.email.message : ""}
           />
           <InputField
-            name='firstName'
-            label='Name'
-            placeholder='John Doe'
+            name="firstName"
+            label="Name"
+            placeholder="Mercy Ngeru"
             register={register("firstName", {
               required: "Name is required!",
             })}
             error={errors.firstName ? errors.firstName.message : ""}
           />
           <InputField
-            type='password'
-            name='password'
-            label='Password'
-            placeholder='Password'
+            type="password"
+            name="password"
+            label="Password"
+            placeholder="Password"
             register={register("password", {
               required: "Password is required!",
             })}
             error={errors.password ? errors.password.message : ""}
           />
 
-          <div className='w-full mt-8'>
+          <div className="w-full mt-8">
             <Button
               loading={loading}
-              type='submit'
-              label='Create Account'
-              className='bg-violet-800 w-full text-white'
+              type="submit"
+              label="Create Account"
+              className="bg-violet-800 w-full text-white"
             />
 
-            <p className='mt-4 text-gray-600 dark:gray-500 text-sm text-center'>
+            <p className="mt-4 text-gray-600 dark:gray-500 text-sm text-center">
               Already has an account ?{" "}
-              <Link to='/sign-in' className='text-violet-600 hover:underline'>
+              <Link to="/sign-in" className="text-violet-600 hover:underline">
                 Sing In
               </Link>
             </p>

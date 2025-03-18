@@ -27,15 +27,15 @@ const links = [
 ];
 
 const UserMenu = () => {
-  const { user, setCredentails } = useStore((state) => state);
+  const { user, setCredentials } = useStore((state) => state);
   const navigate = useNavigate();
 
-  const handleSingout = async () => {
+  const handleSignout = async () => {
     if (user.provider === "google") {
       await handleSocialLogout();
     }
     localStorage.removeItem("user");
-    setCredentails(null);
+    setCredentials(null);
     navigate("/sign-in");
   };
 
@@ -55,14 +55,14 @@ const UserMenu = () => {
             <div className="flex items-center justify-center w-10 h-10 text-white rounded-full cursor-pointer 2xl:w-12 2xl:h-12 bg-violet-600">
               <p className="text-2xl font-bold">{user?.firstname?.charAt(0)}</p>
             </div>
-            {/* <div className="hidden text-left md:block">
+            <div className="hidden text-left md:block">
               <p className="text-lg font-medium text-black dark:text-gray-400">
                 {user?.firstname}
               </p>
               <span className="text-sm text-gray-700 dark:text-gray-500">
                 {user?.email}
               </span>
-            </div> */}
+            </div>
             <MdOutlineKeyboardArrowDown className="hidden text-2xl text-gray-600 cursor-pointer md:block dark:text-gray-300" />
           </div>
         </MenuButton>
@@ -99,7 +99,7 @@ const UserMenu = () => {
             <MenuItem>
               {() => (
                 <button
-                  onClick={handleSingout}
+                  onClick={handleSignout}
                   className={`bg-red-700/15 text-red-600 dark:bg-red-600 dark:text-white flex w-full items-center rounded-md px-2 py-2 text-sm`}
                 >
                   Sign Out

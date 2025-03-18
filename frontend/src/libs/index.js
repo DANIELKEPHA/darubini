@@ -76,5 +76,5 @@ export function generateAccountNumber() {
     const uuid = uuidv4().replace(/-/g, "");
     accountNumber += uuid.replace(/\D/g, "");
   }
-  return accountNumber.substr(0, 13);
+  return accountNumber.subtract(0, 13);
 }

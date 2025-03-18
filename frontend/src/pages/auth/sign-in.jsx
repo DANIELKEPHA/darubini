@@ -29,7 +29,7 @@ const loginSchema = z.object({
 });
 
 export default function SigninPage() {
-  const { user, setCredentails } = useStore((state) => state);
+  const { user, setCredentials } = useStore((state) => state);
   const {
     register,
     handleSubmit,
@@ -50,7 +50,7 @@ export default function SigninPage() {
         const userInfo = { ...res?.user, token: res?.token };
         localStorage.setItem("user", JSON.stringify(userInfo));
 
-        setCredentails(userInfo);
+        setCredentials(userInfo);
 
         setTimeout(() => {
           navigate("/");
